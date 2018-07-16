@@ -10,6 +10,7 @@ RUN apk add --no-cache \
         tzdata \
         userspace-rcu \
         zlib \
+		py-pip \
     && apk -X https://dl-cdn.alpinelinux.org/alpine/edge/main add --no-cache \
         lttng-ust
 		
@@ -41,3 +42,5 @@ ENV DOTNET_USE_POLLING_FILE_WATCHER=true \
     NUGET_XMLDOC_MODE=skip
 
 RUN dotnet help
+
+RUN pip install docker-compose
